@@ -1,3 +1,5 @@
+document.write('<h1>Starter Pokemon:</h1>');
+
 var charmander = {
   name: 'Charmander',
   height: 5,
@@ -15,10 +17,15 @@ var squirtle = {
   height: 4,
   type: 'Water'
 };
+
 var repository = [charmander, bulbasur, squirtle];
 
 
 for (var i = 0; i < repository.length; i++) {
-  document.write('<p>Name:  ' + repository[i].name + '     ' + 'Height:' + repository[i].height + ' feet' +  '      ' + 'Type:' + repository[i].type   + '</p>');
-
+  document.write('<br>' + '<h1>Name: ' + repository[i].name);
+  document.write('<h1>Type: ' + repository[i].type);
+  document.write('<h1>Height: ' + repository[i].height + ' Feet</h1>');
+  if (repository[i].height >= 5) {
+    document.write('<h2>Wow that is big!</h2>');
+  }
 }
