@@ -21,11 +21,14 @@ var squirtle = {
 var repository = [charmander, bulbasur, squirtle];
 
 
-for (var i = 0; i < repository.length; i++) {
-  document.write('<br>' + '<h1>Name: ' + repository[i].name);
-  document.write('<h1>Type: ' + repository[i].type);
-  document.write('<h1>Height: ' + repository[i].height + ' Feet</h1>');
-  if (repository[i].height >= 5) {
-    document.write('<h2>Wow that is big!</h2>');
+function loopBlockFunction (currentPokemon){
+  document.write('<br>' + '<h1>Name: ' + currentPokemon.name);
+  document.write('<h1>Type: ' + currentPokemon.type);
+  document.write('<h1>Height: ' + currentPokemon.height + ' Feet</h1>');
+  if (currentPokemon.height >= 5) {
+    document.write('<h2>Wow that is big!</h2')
   }
 }
+
+
+repository.forEach(loopBlockFunction);
