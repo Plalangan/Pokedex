@@ -20,14 +20,8 @@ var squirtle = {
 };
 
 
-function loopBlockFunction (currentPokemon){
-  document.write('<br>' + '<h1>Name: ' + currentPokemon.name);
-  document.write('<h1>Type: ' + currentPokemon.type);
-  document.write('<h1>Height: ' + currentPokemon.height + ' Feet</h1>');
-  if (currentPokemon.height >= 5) {
-    document.write('<h3>Wow that is big!</h3>')
-  }
-}
+var $pokemonList = document.querySelector('ul');
+
 
 var pokemonRepository = (function () {
   var repository = [charmander, squirtle, bulbasur];
@@ -37,12 +31,24 @@ var pokemonRepository = (function () {
   }
 
   function getAll() {
-    return repository.forEach(loopBlockFunction);
+    return repository.forEach(addListItem);
+
   }
+
+  function addListItem(pokemon){
+    var $addListItem = document.createElement('li');
+    var $button =  document.createElement('button');
+    $button.innerText = pokemon.name;
+    $button.classList.add('button');
+    $addListItem.appendChild($button);
+    $pokemonList.appendChild($addListItem);
+    };
+
 
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
