@@ -42,8 +42,12 @@ var pokemonRepository = (function () {
     $button.classList.add('button');
     $addListItem.appendChild($button);
     $pokemonList.appendChild($addListItem);
+    $button.addEventListener('click', showDetails(pokemon));
     };
 
+function showDetails(pokemon){
+  console.log(pokemon);
+}
 
   return {
     add: add,
