@@ -1,4 +1,4 @@
-document.write('<h1>Starter Pokemon:</h1>');
+document.write('<h1>Pokemon</h1>');
 
 
 var charmander = {
