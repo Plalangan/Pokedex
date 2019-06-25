@@ -1,4 +1,4 @@
-document.write('<h1>Pokemon</h1>');
+document.write('<h1>Starter Pokemon:</h1>');
 
 
 var charmander = {
@@ -41,13 +41,14 @@ var pokemonRepository = (function () {
     $button.innerText = pokemon.name;
     $button.classList.add('button');
     $addListItem.appendChild($button);
+    $button.addEventListener('click', showDetails);
     $pokemonList.appendChild($addListItem);
-    $button.addEventListener('click', showDetails(pokemon));
     };
 
-function showDetails(pokemon){
-  console.log(pokemon);
-}
+    function showDetails(pokemon){
+      console.log(pokemon);
+    }
+
 
   return {
     add: add,
