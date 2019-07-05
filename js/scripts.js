@@ -1,4 +1,4 @@
-document.write('<h1>Starter Pokemon:</h1>');
+
 
 var $pokemonList = document.querySelector('ul');
 
@@ -25,9 +25,9 @@ var pokemonRepository = (function () {
     $pokemonList.appendChild($addListItem);
     }
 
-  function showDetails(pokemon) {
+    function showDetails(pokemon) {
   pokemonRepository.loadDetails(pokemon).then(function () {
-    console.log(pokemon);   });
+    loadDetails(pokemon);   });
 }
 
   function loadList() {
@@ -62,12 +62,16 @@ var pokemonRepository = (function () {
 
 
 
+
   return {
     add: add,
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails
+
+
+
 
   };
 })();
